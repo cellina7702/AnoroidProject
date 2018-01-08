@@ -45,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
 
                     textResult.setText("계산 결과: "+ result+"");
 
+                    Toast.makeText(getApplicationContext(), "test", Toast.LENGTH_SHORT).show();
+
                     return ;
                 }
             });
