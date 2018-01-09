@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         //기능을 구현하기 위해서 id를가져오기
         editA=(EditText)findViewById(R.id.A);
         editB=(EditText)findViewById(R.id.B);
-
+//ㅁ
         btnAdd=(Button)findViewById(R.id.add);
         btnSub=(Button)findViewById(R.id.sub);
         btnMult=(Button)findViewById(R.id.mult);
