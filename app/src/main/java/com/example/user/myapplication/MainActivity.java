@@ -33,19 +33,18 @@ public class MainActivity extends AppCompatActivity {
         textResult=(TextView)findViewById(R.id.Textresult);
 
 
-
-
+            //버튼 동작
             btnAdd.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     num1=editA.getText().toString();
-                    num2=editB.getText().toString();
+                    num2=editB.getText().toString();//간결하게
 
-                    result=Integer.parseInt(num1)+Integer.parseInt(num2);
+                    result=Integer.parseInt(num1)+Integer.parseInt(num2);//buttonadd의 역할
 
-                    textResult.setText("계산 결과: "+ result+"");
+                    textResult.setText("계산 결과: "+ result+"");//Text결과
 
-                    Toast.makeText(getApplicationContext(), "test", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "test", Toast.LENGTH_SHORT).show();//toast메세지
 
                     return ;
                 }
