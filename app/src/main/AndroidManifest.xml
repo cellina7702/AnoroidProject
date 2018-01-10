@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ForIntent"
+        android:screenOrientation="portrait"/>//액티비티만들면항상추가해줘야됨
+
+
     </application>
 
 </manifest>

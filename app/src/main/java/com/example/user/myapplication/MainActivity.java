@@ -1,5 +1,6 @@
 package com.example.user.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textResult;
     String num1,num2;
     int result;
+    Button intentbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,9 +33,23 @@ public class MainActivity extends AppCompatActivity {
         btnDiv=(Button)findViewById(R.id.div);
 
         textResult=(TextView)findViewById(R.id.Textresult);
+        intentbtn=(Button)findViewById(R.id.intent);
+
+        num1="강상연";
+
+        intentbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ForIntent.class);
+                intent.putExtra("container",num1);
+
+                startActivity(intent);
+            }
+        });
 
 
-            //버튼 동작
+/*
+            버튼 동작
             btnAdd.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -91,7 +107,74 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
             });
+            */
 
 
     }
+
+    public void Op(View v){
+
+        int Op=v.getId();
+
+        switch (Op)
+        {
+            case R.id.add :
+
+                num1=editA.getText().toString();
+                num2=editB.getText().toString();//간결하게
+
+                result=Integer.parseInt(num1)+Integer.parseInt(num2);//buttonadd의 역할
+
+                textResult.setText("계산 결과: "+ result+"");//Text결과
+
+                Toast.makeText(getApplicationContext(), "test", Toast.LENGTH_SHORT).show();//toast메세지
+
+
+                break;
+
+            case R.id.sub:
+
+                num1=editA.getText().toString();
+                num2=editB.getText().toString();//간결하게
+
+                result=Integer.parseInt(num1)-Integer.parseInt(num2);//buttonadd의 역할
+
+                textResult.setText("계산 결과: "+ result+"");//Text결과
+
+                Toast.makeText(getApplicationContext(), "test", Toast.LENGTH_SHORT).show();//toast메세지
+
+                break;
+
+            case R.id.mult:
+
+                num1=editA.getText().toString();
+                num2=editB.getText().toString();//간결하게
+
+                result=Integer.parseInt(num1)*Integer.parseInt(num2);//buttonadd의 역할
+
+                textResult.setText("계산 결과: "+ result+"");//Text결과
+
+                Toast.makeText(getApplicationContext(), "test", Toast.LENGTH_SHORT).show();//toast메세지
+
+                break ;
+
+            case R.id.div:
+
+                num1=editA.getText().toString();
+                num2=editB.getText().toString();//간결하게
+
+                result=Integer.parseInt(num1)/Integer.parseInt(num2);//buttonadd의 역할
+
+                textResult.setText("계산 결과: "+ result+"");//Text결과
+
+                Toast.makeText(getApplicationContext(), "test", Toast.LENGTH_SHORT).show();//toast메세지
+
+                break;
+
+        }
+
+
+
+    }
+
 }
