@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/gradation_blue"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="구매확인 알림창"
+        android:textColor="@color/white"
+        android:background="@drawable/gradation_blue"/>
+
+    <TextView
+        android:id="@+id/editScore"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:digits="0123456789"
+        android:inputType="number"
+        android:text="위 리스트에서 구매를 원하는 상품번호를 확인하세요."/>
+
+
+    <EditText
+        android:textColorHint="@color/white"
+        android:hint="주문을 원하는 물품번호를 입력하세요."
+        android:textColor="@color/white"
+        android:id="@+id/editnumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:textColorHint="@color/white"
+        android:hint="주문을 원하는 물품의 갯수를 입력하세요."
+        android:textColor="@color/white"
+        android:id="@+id/editnumber2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+
+            android:layout_gravity="center"
+            android:id="@+id/buttonCancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/login_button"
+            android:text="취소"/>
+        <Button
+
+            android:layout_gravity="center"
+            android:id="@+id/buttonOK"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/login_button"
+            android:text="확인"/>
+    </LinearLayout>
+
+</LinearLayout>
