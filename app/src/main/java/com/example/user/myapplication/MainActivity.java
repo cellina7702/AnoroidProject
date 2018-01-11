@@ -13,15 +13,25 @@ import android.widget.Toast;
 */
 
 
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
-/*public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
-    EditText editA,editB;
-    Button btnAdd,btnSub,btnMult,btnDiv;
-    TextView textResult;
-    String num1,num2;
-    int result;
-    Button intentbtn;
+    private EditText editA,editB;
+    private Button btnAdd,btnSub,btnMult,btnDiv;
+    private TextView textResult;
+    private String num1,num2;
+    private int result;
+    private Button intentbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
