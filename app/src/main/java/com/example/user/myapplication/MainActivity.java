@@ -208,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view2 = (LinearLayout) inflater.inflate(R.layout.dialogbox, null);
         dig.setView(view2);
-      final AlertDialog ad = dig.create();
+      final AlertDialog ad = dig.create();//자세히 알아야하는 부분107~211 책 참고
 
 
       final  Button btncancel=(Button)view2.findViewById(R.id.buttonCancel);
