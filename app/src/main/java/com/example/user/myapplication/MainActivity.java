@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 */
 
-
+/*
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+*/
 /*
             버튼 동작
             btnAdd.setOnClickListener(new View.OnClickListener() {
@@ -213,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);//뷰이미지를생
 
-
+//dd
         AlertDialog.Builder dig = new AlertDialog.Builder(MainActivity.this);
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view2 = (LinearLayout) inflater.inflate(R.layout.dialogbox, null);

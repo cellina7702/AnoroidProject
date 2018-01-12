@@ -122,7 +122,7 @@
         android:id="@+id/div"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
+    /*
     <TextView
         android:text="111111111"
 
@@ -136,3 +136,5 @@
 
 
 </LinearLayout>
+
+
