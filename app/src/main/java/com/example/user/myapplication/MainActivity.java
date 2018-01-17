@@ -213,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);//뷰이미지를생
 
-//dd
+
         AlertDialog.Builder dig = new AlertDialog.Builder(MainActivity.this);
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view2 = (LinearLayout) inflater.inflate(R.layout.dialogbox, null);
@@ -241,7 +241,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         ad.show();
-//dd
+
     }
 
 

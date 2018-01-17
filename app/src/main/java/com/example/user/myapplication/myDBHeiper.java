@@ -15,20 +15,36 @@ public class myDBHeiper  extends SQLiteOpenHelper {
     private StringBuilder string=new StringBuilder();
 
 
-    public myDBHeiper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    public void init()
+    {
+        string.delete(0, string.length());
+        string.trimToSize();
+    }
+
+   public myDBHeiper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-       // db.execSQL("CREATE TABLE infoTBL(sName char(20) , sID int(10) PRIMARY KEY, sDepart char(20));");
-        string.append("CREATE TABLE infoTBL if not exists(");
-        string.append("sName varchar(20),");
-        string.append("sID int PRIMARY KEY not null,");
-        string.append("sDepart varchar(20));");
-        db.execSQL(string.toString());//toString: string객체에 저장된 문자열을 다 불러오겠다
-    }
+
+        init();
+
+        try {
+            // db.execSQL("CREATE TABLE infoTBL(sName char(20) , sID int(10) PRIMARY KEY, sDepart char(20));");
+            string.append("CREATE TABLE if not exists infoTBL(");
+            string.append("sName varchar(20),");
+            string.append("sID varchar(20),");
+            string.append("sDepart varchar(20))");
+            db.execSQL(string.toString());//toString: string객체에 저장된 문자열을 다 불러오겠다
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
@@ -36,33 +52,60 @@ public class myDBHeiper  extends SQLiteOpenHelper {
     }
 
 
-     public void insert(String name,int id, String depart)
+     public void insert(String name, String id, String depart)
      {
+         init();
 
-         SQLiteDatabase db = getWritableDatabase();
-       //  db.execSQL("INSERT INTO infoTBL VALUES("'"+"';");
+         try {
+             SQLiteDatabase db = getWritableDatabase();
+             //  db.execSQL("INSERT INTO infoTBL VALUES("'"+"';");
 
-         string.append("INSERT INTO infoTBL VALUES( ");
-         string.append("'"+name+"', '"+id+"', '"+depart+"' ");
-         string.append(")");//따옴표 나야말로 ";;;"
-         db.execSQL(string.toString());
+             string.append("INSERT INTO infoTBL VALUES( ");
+             string.append("'" + name + "', '" + id + "', '" + depart + "' ");
+             string.append(")");//따옴표 나야말로 ";;;"
+             db.execSQL(string.toString());
 
+         }
+
+         catch(Exception e)
+         {
+             e.printStackTrace();
+         }
      }
 
 
-    public void update(int id, String str)
+    public void update(String id, String str)
      {
-            SQLiteDatabase db=getWritableDatabase();
-            string.append("UPDATE infoTBL SET sName= '"+ str+"' where id='"+id+"'");
-            db.execSQL(string.toString());
+         init();
+         try {
+
+             SQLiteDatabase db = getWritableDatabase();
+             string.append("UPDATE infoTBL SET sName= '" + str + "' where sID='" + id + "'");
+             db.execSQL(string.toString());
+
+         }
+         catch (Exception e)
+         {
+             e.printStackTrace();
+         }
      }
 
-     public  void delete(int id)
+     public  void delete(String id)
      {
-         SQLiteDatabase db=getReadableDatabase();
-         string.append("DELETE FROM infoTBL where id='"+id+"'");
-         db.execSQL(string.toString());
-     }
+         init();
+         try {
+             SQLiteDatabase db = getReadableDatabase();
+             string.append("DELETE FROM infoTBL where sID='" + id + "'");
+             db.execSQL(string.toString());
+
+         }
+         catch (Exception e)
+         {
+             e.printStackTrace();
+         }
+
+         }
+
 
 
 }

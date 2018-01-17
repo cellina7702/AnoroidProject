@@ -9,17 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ForIntent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ForIntent"
-        android:screenOrientation="portrait"/>//액티비티만들면항상추가해줘야됨
-        <activity android:name=".DBHeiper"
-            android:screenOrientation="portrait"/>
+
+
+
 
 
     </application>
